@@ -21,4 +21,14 @@ pipeline {
             steps {
                 sh 'mvn clean install'
             }
+        }
+          stage("SonarQube Analysis") {
+            steps {
+                script {
+                 def scannerHome = tool 'scanner'
+                 withSonarQubeEnv(installationName: 'stationski'){
+                   sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar'
+                 }
+                }
+            }
         }}}
