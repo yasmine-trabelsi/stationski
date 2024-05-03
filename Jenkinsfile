@@ -40,7 +40,7 @@ pipeline {
         stage('Push Image to DockerHub') {
             steps {
                 script {
-                    sh("docker login -u 'yasmine425' -p yasmine1234 ")
+                    sh("docker login -u 'yasmine425' -p admin1234 ")
                     sh('docker push yasmine-trabelsi/stationski')
                 }
             }
