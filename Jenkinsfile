@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Get code from GitHub') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/nadinesaada/stationski.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/yasmine-trabelsi/stationski.git']]])
             }
         }
         stage('Maven compile') {
